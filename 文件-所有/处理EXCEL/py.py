@@ -110,7 +110,7 @@ def getRegion(subHtml):
 
 def askURL(url):
     head = {}
-request = urllib.request.Request(url, headers=head)
+    request = urllib.request.Request(url, headers=head)
     html = ""
     try:
         response = urllib.request.urlopen(request)
