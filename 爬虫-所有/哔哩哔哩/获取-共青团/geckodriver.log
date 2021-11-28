@@ -1,0 +1,272 @@
+1635003771776	geckodriver	INFO	Listening on 127.0.0.1:57007
+1635003774849	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "57008" "-no-remote" "-profile" "C:\\Users\\彭于晏\\AppData\\Local\\Temp\\rust_mozprofileP7qucD"
+*** You are running in headless mode.
+1635003775273	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\\u5F6D\u4E8E\u664F\\AppData\\Local\\Temp\\rust_mozprofileP7qucD\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:57008/devtools/browser/5582fa98-d56e-49e2-8618-a90b0e6b32b2
+1635003776711	Marionette	INFO	Listening on port 57021
+1635003776963	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+console.error: Region.jsm: "Error fetching region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 772))
+console.error: Region.jsm: "Failed to fetch region" (new Error("TIMEOUT", "resource://gre/modules/Region.jsm", 419))
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 18ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb579dd9e0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 161: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb519ca820 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 15ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb591fb740 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 15ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5910f4a0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb51f9cf20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 9ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb56d6b040 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: uncaught exception: 0
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb530ab3c0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 9ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb55ff2ba0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 13ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb597fa580 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 14ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb57068820 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 15ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5104e2e0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 10ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb56c77040 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript error: , line 0: uncaught exception: 0
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb56db1200 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 9ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb572213c0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 10ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb55f46200 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 10ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5c43b900 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb50a3b740 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5c3bac80 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5f976f20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 16ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb6763ff20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 13ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5c049900 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5bd38820 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5bd44820 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb69e59f20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb6a8efd60 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb758a0f20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb05bf7740 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 20ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb061de740 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 10ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb0f4e7820 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb0589cc80 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb068bc2e0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 10ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb0f4bc580 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb011fb820 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb5e463740 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb71cba2e0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb0d3ed120 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb0cceb200 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 14ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb755a6e40 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb1d043f20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 10ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb0d246f20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb27219900 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 11ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb26ab2e40 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/widgets/jsc-player.053f507a.js, line 0: Successfully compiled asm.js code (total compilation time 12ms)
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb04c8eac0 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js, line 637: unreachable code after return statement
+JavaScript warning: https://s1.hdslb.com/bfs/seed/jinkela/commentpc/comment.min.js line 29 > eval, line 2: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.js?v=20210111, line 149: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb010bd120 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+1635004489673	addons.xpi	ERROR	Failed to download system add-on reset-search-defaults@mozilla.com: Error: Failed downloading via XHR, status: 0, reason: error(resource://gre/modules/addons/ProductAddonChecker.jsm:244:16) JS Stack trace: fail@ProductAddonChecker.jsm:244:16
+1635004489674	addons.xpi	ERROR	Failed to download system add-on proxy-failover@mozilla.com: Error: Failed downloading via XHR, status: 0, reason: error(resource://gre/modules/addons/ProductAddonChecker.jsm:244:16) JS Stack trace: fail@ProductAddonChecker.jsm:244:16
+1635004489675	addons.xpi	ERROR	Failed to download system add-on addons-search-detection@mozilla.com: Error: Failed downloading via XHR, status: 0, reason: error(resource://gre/modules/addons/ProductAddonChecker.jsm:244:16) JS Stack trace: fail@ProductAddonChecker.jsm:244:16
+[Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb011fbf20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
+Exiting due to channel error.
+Exiting due to channel error.

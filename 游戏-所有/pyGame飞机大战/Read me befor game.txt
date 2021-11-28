@@ -1,0 +1,40 @@
+无法游戏：
+	1、将exe文件和pictures、sounds文件放在一个文件夹中 打开exe即可游戏
+	2、若出现显示不全问题，可能是由于您使用的笔记本电脑缩放并不是100%，在显示设置中将缩放调到100%即可
+
+关于游戏设定：
+	1、游戏中玩家有四种战机可以选择，前三种战机有四种形态，最后一种只有一种形态，但是是动态的
+	2、游戏中玩家飞机只能在屏幕一半以下进行移动
+	3、玩家技能可以清除碰到的所有敌方飞机，敌方飞机子弹，但是无法清除BOSS发射的子弹
+	4、战机每次放技能耗费50蓝
+	5、BOSS会在分数800的时候出现，打败BOSS即可通关
+
+
+
+Unable to play:
+
+
+	1. Place exe files and pictures, sounds files in a folder and open exe to play.
+	2. If there is an incomplete display problem, it may be that the scale of your laptop is not 100%. 
+	    In the display settings, it is enough to adjust the scale to 100%.
+
+
+
+Regarding game settings:
+
+	
+1. Players can choose four fighters in the game. The first three fighters have four forms. 
+	    The last one has only one form, but it is dynamic.
+
+
+	2. Player's plane can only move under half of the screen in the game.
+	
+
+3. Player skills can clear all enemy aircraft and enemy aircraft bullets, but can not clear the bullets 
+	    launched by BOSS.
+
+
+	4. Fighter's skill expenditure is 50 blue per time.
+
+
+	5. BOSS will appear when the score is 800. If you defeat BOSS, you can clear customs.

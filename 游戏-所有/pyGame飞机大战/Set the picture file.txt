@@ -1,0 +1,11 @@
+将源码和sounds.zip pictures.zip picture plus.zip下载并解压
+将picture plus.zip解压后文件放到pictures.zip解压后文件的pictures/backgrounds下面
+将sounds、添加文件后的pictures、源码放置到一个文件夹
+
+Download and decompress the source code and sounds.zip pictures.zip picture plus.zip
+
+
+Put the decompressed picture plus. zip file under pictures / backgrounds of the decompressed pictures. zip file
+
+
+Place sounds, pictures after adding files, and source code in a folder
