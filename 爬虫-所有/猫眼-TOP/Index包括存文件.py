@@ -3,6 +3,7 @@ import xlwt
 import requests
 from bs4 import BeautifulSoup
 import random
+import pandas as pd
 
 headers = {
     "Accept": 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
@@ -21,9 +22,10 @@ headers = {
     "Upgrade-Insecure-Requests": '1',
     "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.159 Safari/537.36',
 }
+
 url_list = []  # 所有单个url
 for iii in range(0, 1):
-    url = 'https://maoyan.com/board/4?offset=' + str(iii) + '0' + '&requestCode=7fa248622b92ddbd3842c71189f47eed5otyk'
+    url = 'https://maoyan.com/board/4?offset=' + str(iii) + '0'
     response = requests.get(url, headers=headers).content.decode('utf-8')
     print(response)
     soup = BeautifulSoup(response, "lxml")
@@ -31,11 +33,12 @@ for iii in range(0, 1):
     listUrl = soup.select('.image-link')
     for i in listUrl:
         url_list.append('https://maoyan.com' + str(i['href']))
-    time.sleep(random.randint(2, 10))
+# 	time.sleep(random.randint(20, 50))
 print(url_list)
 
 all_info = []
 for singUrl in url_list:
+    print(singUrl)
     response = requests.get(singUrl, headers=headers).content.decode('utf-8')
     print(response)
     soup = BeautifulSoup(response, "lxml")
@@ -64,4 +67,12 @@ for singUrl in url_list:
     sjsjStr = sjsj[len(sjsj) - 1].string
     sjsjStr = sjsjStr.replace(' ', '')
     all_info.append([name, yyStr, dy, lxStr, sjsjStr])
+    time.sleep(random.randint(20, 50))
 print(all_info)
+
+
+# 存表格
+df = pd.DataFrame(all_info) #将获取到的所有数据生成表格
+# 设置下边表格的字段
+df.columns = ['名称', '演员', '导演', '类型','上架时间']
+df.to_csv('测试.csv',encoding='utf_8_sig')
