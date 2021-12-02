@@ -2,19 +2,10 @@ import pymysql
 import requests
 import json
 
-# 打开数据库连接
-db = pymysql.connect(host="localhost",user="root",password="137928",database="db",port=3306)
+# 连接数据库
+db = pymysql.connect(host="localhost",user="root",password="137928",database="db",port=3306)# (需要改成ORACLE版本)
 # 使用cursor()方法获取操作游标
-cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
-# sql = "SELECT * FROM goods"
-# cursor.execute(sql)# 执行SQL语句
-# # 获取所有记录列表
-# res = cursor.fetchall()
-# for i in res:
-#     print(i['price'])
-# db.close()# 关闭数据库连接
-
-
+cursor = db.cursor(cursor=pymysql.cursors.DictCursor)# (需要改成ORACLE版本)
 
 
 headers = {
@@ -34,9 +25,11 @@ def getDetail(singurl):
         itemdesc = i['itemdesc']# 详情
         itempic = i['itempic']# 图片
         itemendprice = i['itemendprice']# 券后价
+
+        # (需要改成ORACLE版本)
         sql = f"insert into info (title,des,picture,price) values ('{itemshorttitle}','{itemdesc}','{itempic}','{itemendprice}')"
         try:
-            cursor.execute(sql)  # 执行SQL语句
+            cursor.execute(sql)  # 执行SQL语句# (需要改成ORACLE版本)
         except:
             print('当前错误页面链接为{}'.format(singurl))
 
