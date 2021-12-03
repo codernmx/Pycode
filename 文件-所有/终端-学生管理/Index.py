@@ -69,6 +69,11 @@ def addInfo():
     age = input('请输入学生年龄：')
     sex = input('请输入学生性别：')
     cla = input('请输入学生班级：')
+    # 判断id是否重复
+    for i in range(0,len(studentList)):
+        if studentList[i]['id'] == str(id):
+            id = input('当前学号重复，请重新输入：')
+            break
     info = {
         "id": id,  # 学号
         "name": name,  # 姓名
@@ -108,5 +113,5 @@ if __name__ == "__main__":
             else:
                 print('再见！！')
                 break
-else:
-    print('账号密码不对哦亲！！')
+    else:
+        print('账号密码不对哦亲！！')
