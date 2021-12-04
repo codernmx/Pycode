@@ -13,9 +13,11 @@ cursor = db.cursor(cursor=pymysql.cursors.DictCursor)  # 游标 # (需要改成O
 while True:
     try:
         db.ping()  # (需要改成ORACLE版本 看情况)
+        print('55')
         break
     except:
         db.ping(True)  # (需要改成ORACLE版本 看情况)
+        print('55')
 
 
 # 用户登录
@@ -47,7 +49,7 @@ def user_register():
     # 获参数
     user = request.get_json().get('user')
     password = request.get_json().get('password')
-    print(user,password)
+    print(user, password)
     sql = f"insert into user (user,password) values ('{user}', '{password}')"
     cursor.execute(sql)
     res = cursor.fetchall()
@@ -70,7 +72,6 @@ def getInfoDetails():
     # 拿到请求参数
     id = request.json.get('id')
 
-
     sql = f"select * from info where id = '{id}'"
     cursor.execute(sql)  # 执行SQL语句
     # # 获取所有记录列表
@@ -90,7 +91,7 @@ def getInfoSearch():
     res = cursor.fetchall()
 
     return success(res, '请求成功')
-        # 添加商品
+    # 添加商品
 
 
 @app.route('/api/goods/insert', methods=['POST', 'GET'])
@@ -103,8 +104,6 @@ def getInfoInsert():
         # 给个默认图片
         picture = 'https://img.alicdn.com/bao/uploaded/TB1eTo5o1H2gK0jSZJnXXaT1FXa.png'
     price = request.get_json().get('price')
-
-
 
     sql = f"insert into info (title,des,picture,price) values ('{title}','{des}','{picture}','{price}')"
     print(sql)
@@ -137,9 +136,29 @@ def getInfoUpdate():
     picture = request.get_json().get('picture')
     price = request.get_json().get('price')
     id = request.get_json().get('id')
+    iscar = request.get_json().get('iscar')
+    isstars = request.get_json().get('isstars')
 
-    sql = f"UPDATE info set title = '{title}', des = '{des}',picture='{picture}',price='{price}' where id = '{id}'"
+    sql = f"UPDATE info set title = '{title}', des = '{des}',picture='{picture}',price='{price}',iscar='{iscar}',isstars='{isstars}' where id = '{id}'"
     print(sql)
+    cursor.execute(sql)  # 执行SQL语句
+    # # # 获取所有记录列表
+    res = cursor.fetchall()
+    return success(res, '请求成功')
+
+
+# 购物车列表
+@app.route('/api/car/list', methods=['POST', 'GET'])
+def getInfoCar():
+    sql = f"select * from info where iscar = 1 LIMIT 0,100"
+    cursor.execute(sql)  # 执行SQL语句
+    # # # 获取所有记录列表
+    res = cursor.fetchall()
+    return success(res, '请求成功')
+# 收藏列表
+@app.route('/api/stars/list', methods=['POST', 'GET'])
+def getInfoStars():
+    sql = f"select * from info where isstars = 1 LIMIT 0,100"
     cursor.execute(sql)  # 执行SQL语句
     # # # 获取所有记录列表
     res = cursor.fetchall()
