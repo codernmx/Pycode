@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Awesome-pyecharts</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+
+</head>
+<body>
+    <div id="08311e682d054b94bb2e0f94b8eacdbb" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_08311e682d054b94bb2e0f94b8eacdbb = echarts.init(
+            document.getElementById('08311e682d054b94bb2e0f94b8eacdbb'), 'white', {renderer: 'canvas'});
+        var option_08311e682d054b94bb2e0f94b8eacdbb = {
+    "backgroundColor": "#2c343c",
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "pie",
+            "name": "\u5177\u4f53\u6570\u636e",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "\u5927\u4e8e15W",
+                    "value": 13
+                },
+                {
+                    "name": "10W-15W",
+                    "value": 332
+                },
+                {
+                    "name": "5W-10W",
+                    "value": 4183
+                },
+                {
+                    "name": "0-5W",
+                    "value": 5518
+                }
+            ],
+            "radius": "55%",
+            "center": [
+                "50%",
+                "50%"
+            ],
+            "roseType": "radius",
+            "label": {
+                "show": true,
+                "position": "top",
+                "color": "rgba(255, 255, 255, 0.3)",
+                "margin": 8
+            },
+            "tooltip": {
+                "show": true,
+                "trigger": "item",
+                "triggerOn": "mousemove|click",
+                "axisPointer": {
+                    "type": "line"
+                },
+                "showContent": true,
+                "alwaysShowContent": false,
+                "showDelay": 0,
+                "hideDelay": 100,
+                "formatter": "{a} <br/>{b}: {c} ({d}%)",
+                "textStyle": {
+                    "fontSize": 14
+                },
+                "borderWidth": 0,
+                "padding": 5
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u5927\u4e8e15W",
+                "10W-15W",
+                "5W-10W",
+                "0-5W"
+            ],
+            "selected": {},
+            "show": false,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u53a6\u95e8\u623f\u4ef7\u4ef7\u683c\u533a\u95f4\u7edf\u8ba1",
+            "left": "center",
+            "top": "20",
+            "padding": 5,
+            "itemGap": 10,
+            "textStyle": {
+                "color": "#fff"
+            }
+        }
+    ]
+};
+        chart_08311e682d054b94bb2e0f94b8eacdbb.setOption(option_08311e682d054b94bb2e0f94b8eacdbb);
+    </script>
+</body>
+</html>

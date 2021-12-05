@@ -21,6 +21,13 @@ df['房屋用途'].replace(r'\s+|\\n', ' ', regex=True, inplace=True)  # 去除\
 
 df['房屋朝向'] = df['房屋朝向'].str.replace(' ', '', regex=False) #房屋朝向去除空格
 
+# pd.set_option('display.max_columns', None)  #展示所有字段
+# topTen = df.sort_values(by = '单价',ascending=False).head(10)    #按照某一个字段排序
+# topTen = topTen[['小区', '单价']]  #展示两个字段
+
+a = df.sort_values(by = '价格',ascending=False).head(10)    #按照某一个字段排序
+print(a)
+
 # print(df.head(10))
 
 
