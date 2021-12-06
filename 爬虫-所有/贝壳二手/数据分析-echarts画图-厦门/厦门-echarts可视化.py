@@ -1,9 +1,10 @@
 import pandas as pd
 import pyecharts.options as opts
 from pyecharts.charts import Pie
-from pyecharts.charts import Bar
+from pyecharts.charts import Bar, Page
 
-# 折线图
+page = Page()
+
 df = pd.read_csv('厦门处理之后.csv', encoding='utf-8')
 
 y_data = []
@@ -21,31 +22,11 @@ x_data = ["0-5W", "5W-10W", "10W-15W", "大于15W"]
 data_pair = [list(z) for z in zip(x_data, y_data)]
 data_pair.sort(key=lambda x: x[1])
 
-(
-    Pie(init_opts=opts.InitOpts(bg_color="#2c343c"))
-        .add(
-        series_name="具体数据",
-        data_pair=data_pair,
-        rosetype="radius",
-        radius="55%",
-        center=["50%", "50%"],
-        label_opts=opts.LabelOpts(is_show=False, position="center"),
-    )
-        .set_global_opts(
-        title_opts=opts.TitleOpts(
-            title="厦门房价价格区间统计",
-            pos_left="center",
-            pos_top="20",
-            title_textstyle_opts=opts.TextStyleOpts(color="#fff"),
-        ),
-        legend_opts=opts.LegendOpts(is_show=False),
-    )
-        .set_series_opts(
-        tooltip_opts=opts.TooltipOpts(
-            trigger="item", formatter="{a} <br/>{b}: {c} ({d}%)"
-        ),
-        label_opts=opts.LabelOpts(color="rgba(255, 255, 255, 0.3)"),
-    )
+pie = (
+    Pie()
+        .add("", [list(z) for z in zip(x_data, y_data)])
+        .set_global_opts(title_opts=opts.TitleOpts(title="厦门房价价格区间统计"))
+        .set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"))
         .render("厦门房价价格区间统计-饼图.html")
 )
 

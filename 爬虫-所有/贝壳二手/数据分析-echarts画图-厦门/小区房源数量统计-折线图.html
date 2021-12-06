@@ -7,11 +7,11 @@
 
 </head>
 <body>
-    <div id="93699d6e5a1043ff8b3f299a9c1bd0c4" class="chart-container" style="width:900px; height:500px;"></div>
+    <div id="0f79d687ce994221b8530e804589f62b" class="chart-container" style="width:900px; height:500px;"></div>
     <script>
-        var chart_93699d6e5a1043ff8b3f299a9c1bd0c4 = echarts.init(
-            document.getElementById('93699d6e5a1043ff8b3f299a9c1bd0c4'), 'white', {renderer: 'canvas'});
-        var option_93699d6e5a1043ff8b3f299a9c1bd0c4 = {
+        var chart_0f79d687ce994221b8530e804589f62b = echarts.init(
+            document.getElementById('0f79d687ce994221b8530e804589f62b'), 'white', {renderer: 'canvas'});
+        var option_0f79d687ce994221b8530e804589f62b = {
     "animation": true,
     "animationThreshold": 2000,
     "animationDuration": 1000,
@@ -48,42 +48,69 @@
     ],
     "series": [
         {
-            "type": "bar",
-            "name": "\u533a\u57df\u623f\u6e90\u6570",
-            "legendHoverLink": true,
-            "data": [
-                3000,
-                2969,
-                2967,
-                1050,
-                60
-            ],
-            "showBackground": false,
-            "barMinHeight": 0,
-            "barCategoryGap": "20%",
-            "barGap": "30%",
-            "large": false,
-            "largeThreshold": 400,
-            "seriesLayoutBy": "column",
-            "datasetIndex": 0,
+            "type": "line",
+            "name": "\u5c0f\u533a\u623f\u6e90\u6570\u91cf\u7edf\u8ba1",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
             "clip": true,
-            "zlevel": 0,
-            "z": 2,
+            "step": false,
+            "data": [
+                [
+                    "\u6cf0\u79be\u53a6\u95e8\u9662\u5b50",
+                    121
+                ],
+                [
+                    "\u5929\u6e56\u57ce\u5929\u6e56",
+                    101
+                ],
+                [
+                    "\u672a\u6765\u6a59\u5821",
+                    90
+                ],
+                [
+                    "\u897f\u96c5\u56fe",
+                    89
+                ],
+                [
+                    "\u5929\u6e90",
+                    76
+                ]
+            ],
+            "hoverAnimation": true,
             "label": {
                 "show": true,
                 "position": "top",
                 "margin": 8
-            }
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
         }
     ],
     "legend": [
         {
             "data": [
-                "\u533a\u57df\u623f\u6e90\u6570"
+                "\u5c0f\u533a\u623f\u6e90\u6570\u91cf\u7edf\u8ba1"
             ],
             "selected": {
-                "\u533a\u57df\u623f\u6e90\u6570": true
-            }
+                "\u5c0f\u533a\u623f\u6e90\u6570\u91cf\u7edf\u8ba1": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
         }
     ],
     "tooltip": {
@@ -125,11 +152,11 @@
                 }
             },
             "data": [
-                "\u6d77\u6ca7",
-                "\u6e56\u91cc",
-                "\u601d\u660e",
-                "\u96c6\u7f8e",
-                "\u7fd4\u5b89"
+                "\u6cf0\u79be\u53a6\u95e8\u9662\u5b50",
+                "\u5929\u6e56\u57ce\u5929\u6e56",
+                "\u672a\u6765\u6a59\u5821",
+                "\u897f\u96c5\u56fe",
+                "\u5929\u6e90"
             ]
         }
     ],
@@ -155,9 +182,16 @@
                 }
             }
         }
+    ],
+    "title": [
+        {
+            "text": "\u524d\u4e94\u5c0f\u533a\u623f\u6e90\u6570\u6298\u7ebf\u56fe",
+            "padding": 5,
+            "itemGap": 10
+        }
     ]
 };
-        chart_93699d6e5a1043ff8b3f299a9c1bd0c4.setOption(option_93699d6e5a1043ff8b3f299a9c1bd0c4);
+        chart_0f79d687ce994221b8530e804589f62b.setOption(option_0f79d687ce994221b8530e804589f62b);
     </script>
 </body>
 </html>
