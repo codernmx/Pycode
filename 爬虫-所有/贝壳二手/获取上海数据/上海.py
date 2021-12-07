@@ -1,5 +1,4 @@
 import time
-
 import xlwt
 import requests
 from bs4 import BeautifulSoup
@@ -76,14 +75,13 @@ def getDetail(singurl):
     if not isNian:
         fangwunianxian = ''
 
-    # return [quyu, xiaoqu, jiage, huxing, mianji, danjia, fangwuchaoxiang, louceng, zhuangxiuqingkuang,
-    #         jianzhushijian, peibeidianti,chaquanleix,guapaishijianStr]
     return  [danjia,xiaoqu,jiage,huxing,mianji,fangwuchaoxiang,jianzhushijian,fangwunianxian,huxingjiegou,zhuangxiuqingkuang]
 
 # 一个地区最多获取一百页
-for j in range(1, 35):
+for j in range(1, 100):
     print('当前获取页码------------',j)
-    url = 'https://sh.ke.com/ershoufang/xuhui/' + str(j) + '/'
+    #需要改下边 每个分区 不一样
+    url = 'https://sh.ke.com/ershoufang/chongming/pg' + str(j) + '/'
     res = requests.get(url, headers=headers).content.decode('utf-8')
     # print(res)
     soup = BeautifulSoup(res, "lxml")
@@ -93,9 +91,8 @@ for j in range(1, 35):
         url = i['href']
         singleInfo = getDetail(url)
         # 存储
-        df = pd.read_csv('上海数据.csv', encoding='utf-8')
+        df = pd.read_csv('获取一百页.csv', encoding='utf-8')
         df.loc[len(df)] = singleInfo  # 其中loc[]中需要加入的是插入地方dataframe的索引，默认是整数型
-        # [jiage, huxing, mianji, fangwuchaoxiang, jianzhushijian, fangwunianxian, huxingjiegou, zhuangxiuqingkuang]
         df.columns = ['单价','小区','总价', '户型', '面积', '房屋朝向', '建成年代', '房产年限', '户型结构', '装修情况']
-        df.to_csv('上海数据.csv', index=False, encoding='utf_8_sig')
+        df.to_csv('获取一百页.csv', index=False, encoding='utf_8_sig')
     time.sleep(random.randint(1, 10))
