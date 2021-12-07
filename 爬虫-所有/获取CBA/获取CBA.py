@@ -2,14 +2,11 @@ import pandas as pd
 import xlwt
 import requests
 from bs4 import BeautifulSoup
-
 url = 'http://cbadata.sports.sohu.com/teams/team_sch/NTe003'
 headers = {
     "Cookie": "IPLOC=CN5000; SUV=211206094136CEYA; gidinf=x099980109ee145e3691f94740000bca0d8b9fa5c47c; t=1638770110650",
     "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43'
 }
-
-
 def getDetailInfo(url):
     print(url)
     res = requests.get(url, headers=headers).content.decode('utf-8') #对每一个网页发请求
@@ -24,8 +21,6 @@ def getDetailInfo(url):
         ke = i.contents[7].string  # 客队
         singleInfo.append([title,time,zhu,score,ke])
     return singleInfo
-
-
 res = requests.get(url, headers=headers).content.decode('utf-8')
 soup = BeautifulSoup(res, "lxml")
 allList = soup.select(".area > .cutG > h2 > span > select > option")  #拿到所有球队的链接
@@ -35,7 +30,6 @@ for i in allList:
         singleUrl = 'http://cbadata.sports.sohu.com/teams/team_sch/' + str(i['value']) #拼接真实url
         singleInfo = getDetailInfo(singleUrl) #传入函数
         allInfo.extend(singleInfo)
-
 df = pd.DataFrame(allInfo)  #转为dataframe
 df.columns = ['球队名', '比赛时间', '主队', '得分情况', '客队'] #设置表头
 df.to_csv('CBA.csv', encoding='utf_8_sig') #存入csv
