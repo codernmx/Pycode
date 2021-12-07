@@ -270,3 +270,20 @@ JavaScript warning: https://s1.hdslb.com/bfs/static/player/main/video.8a620fae.j
 [Child 8684, MediaDecoderStateMachine #1] WARNING: 1eb011fbf20 Could not set cubeb stream name.: file /builds/worker/checkouts/gecko/dom/media/AudioStream.cpp:367
 Exiting due to channel error.
 Exiting due to channel error.
+1638878594419	geckodriver	INFO	Listening on 127.0.0.1:65347
+1638878597520	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--headless" "--remote-debugging-port" "65348" "-no-remote" "-profile" "C:\\Users\\彭于晏\\AppData\\Local\\Temp\\rust_mozprofilevwb4o4"
+*** You are running in headless mode.
+1638878597982	Marionette	INFO	Marionette enabled
+[GFX1-]: RenderCompositorSWGL failed mapping default framebuffer, no dt
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\\u5F6D\u4E8E\u664F\\AppData\\Local\\Temp\\rust_mozprofilevwb4o4\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:65348/devtools/browser/0533d391-201b-400a-8c69-2516e41b5096
+1638878599360	Marionette	INFO	Listening on port 65354
+1638878599697	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+JavaScript warning: https://s1.hdslb.com/bfs/seed/log/report/log-reporter.js, line 1: WebGL context was lost.
+console.log: WebExtensions: reset-default-search: starting.
+console.log: WebExtensions: reset-default-search: No addons in our list are installed.
