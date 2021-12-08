@@ -7,9 +7,9 @@ import pandas as pd
 from aip import AipOcr
 
 """ 你的 APPID AK SK """
-APP_ID = ''
-API_KEY = ''
-SECRET_KEY = ' '
+APP_ID = '25216043'
+API_KEY = 'Gm13jGTraOZHq5EW33ATuQRr'
+SECRET_KEY = 'oSUBrw1EG98n9x8AjpW9CEe1QXYWPul7'
 dir = "C:\\Users\\Myxk\\Desktop\\ApiPythonSDK\\img"  # 设置工作路径
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
