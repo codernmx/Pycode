@@ -35,7 +35,6 @@ def drawLine(year):
             markline_opts=opts.MarkLineOpts(data=[opts.MarkLineItem(type_="average")]),
         )
             .set_global_opts(title_opts=opts.TitleOpts(title=year + "高温低温变化曲线图"))
-        .render("line.html")
     )
     return c
 
