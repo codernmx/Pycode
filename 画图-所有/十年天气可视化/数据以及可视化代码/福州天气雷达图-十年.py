@@ -46,8 +46,8 @@ def Page_total():
         )
     )
     # page.render('雷达图-未配置.html')  # 渲染页面要自己打开拿到chart_config   然后不要这个渲染  直接下边save 得到最终页面
-    Page.save_resize_html('雷达图-未配置.html', cfg_file='chart_config (2).json', dest='雷达图-final.html')
+    # Page.save_resize_html('雷达图-未配置.html', cfg_file='chart_config (2).json', dest='雷达图-final.html')
 
 
 Page_total()
-os.system('雷达图-final.html')
+os.system('福州天气雷达图-十年.html')

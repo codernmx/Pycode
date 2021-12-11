@@ -21,6 +21,8 @@ def drawLine(year):
         two_d = cutStr.split('/')[1].split('℃')[0]
         data_x.append(one)
         data_y.append(two_d)
+    print(data_x)
+    print(data_y)
     c = (
         Line()
             .add_xaxis(data_xx)
@@ -47,12 +49,22 @@ def Page_total():
     page = (
         Page(layout=Page.DraggablePageLayout)
             .add(
+            drawLine('2011'),
+            drawLine('2012'),
+            drawLine('2013'),
+            drawLine('2014'),
+            drawLine('2015'),
+            drawLine('2016'),
+            drawLine('2017'),
+            drawLine('2018'),
+            drawLine('2019'),
+            drawLine('2020'),
             drawLine('2021'),
         )
     )
-    # page.render('2021.html')  # 渲染页面要自己打开拿到chart_config   然后不要这个渲染  直接下边save 得到最终页面
-    Page.save_resize_html('2021.html', cfg_file='单.json', dest='2021-图.html')
+    # page.render('page.html')  # 渲染页面要自己打开拿到chart_config   然后不要这个渲染  直接下边save 得到最终页面
+    # Page.save_resize_html('page.html', cfg_file='chart_config.json', dest='final.html')
 
 
 Page_total()
-os.system('2021-图.html')
+os.system('高温低温变化曲线折线图-十年.html')
