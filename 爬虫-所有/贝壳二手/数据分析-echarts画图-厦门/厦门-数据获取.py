@@ -8,8 +8,8 @@ import json
 import random
 
 headers = {
-    "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.34',
-    "Cookie": 'lianjia_uuid=741ff607-861b-42c2-a026-b46bc4e68618; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2217d667be0445cf-07b62fd5b47cca-5919135e-1327104-17d667be045c18%22%2C%22%24device_id%22%3A%2217d667be0445cf-07b62fd5b47cca-5919135e-1327104-17d667be045c18%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E8%87%AA%E7%84%B6%E6%90%9C%E7%B4%A2%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22https%3A%2F%2Fwww.baidu.com%2Flink%22%2C%22%24latest_referrer_host%22%3A%22www.baidu.com%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC%22%7D%7D; lianjia_ssid=4424b121-24ed-499f-a2a6-056d765f2cc7; select_city=110000; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1638270738; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1638270763; srcid=eyJ0Ijoie1wiZGF0YVwiOlwiZDA1NDFhNjNlZWQzOWE5NTgwMzVjNGYwMWE4ZDNkOTM5ZGJlNWFjODdkNWQzYzczYmRiYTMzMDY0YjI4N2JhZDA4OWYyMDkzOGY1MDY1ZWQyZjgwNDc2NDBiNjRmYTYwNTNmZTkzMzNmNDM3NGNjMDk4MzI0ODM1Yzc0YWIwOTMzZjkyNGM1ZmFjNGMwMWQ4ZDFkNzk1MjQ4ZGIzMjViZDE4OWU3MTk4ZTk3MWE5MTgyZTk5YjM4MGYwMjdkMjg3NzQ1M2JjNGJlZTE1MjFlNjcwY2VlMGIyNjJjODA5MjJhMjNhNjg4MGE1ZjgxNmFmMjNiODAxOGI5NTRlOTQ2ODlhYjRiMDIxMGQ0ODY0NmVjMTMxYzQwNGNkNjlkMjhiOGE3NWEzM2Q2Y2NhNmIxMmNkNWU5Y2JiMDZjZDllNjIwYmVkM2I5NjE3MTYxMGJmNjRmZGJiMGNiYTYzOGQwYlwiLFwia2V5X2lkXCI6XCIxXCIsXCJzaWduXCI6XCJmMGUzODI3MFwifSIsInIiOiJodHRwczovL2JqLmtlLmNvbS9lcnNob3VmYW5nL3BnMi8iLCJvcyI6IndlYiIsInYiOiIwLjEifQ=='
+    "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.43',
+    "Cookie": 'lianjia_uuid=71b8c20d-fd04-48d6-95ee-017fe10d83ae; sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2217d8ff7ddb717e-0d13b2d762ffb3-3a67410c-1327104-17d8ff7ddb8345%22%2C%22%24device_id%22%3A%2217d8ff7ddb717e-0d13b2d762ffb3-3a67410c-1327104-17d8ff7ddb8345%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%22%E7%9B%B4%E6%8E%A5%E6%B5%81%E9%87%8F%22%2C%22%24latest_referrer%22%3A%22%22%2C%22%24latest_referrer_host%22%3A%22%22%2C%22%24latest_search_keyword%22%3A%22%E6%9C%AA%E5%8F%96%E5%88%B0%E5%80%BC_%E7%9B%B4%E6%8E%A5%E6%89%93%E5%BC%80%22%7D%7D; select_city=350200; lianjia_ssid=d5ed38e9-c7ae-462d-a9ab-75c0aa1da079; Hm_lvt_9152f8221cb6243a53c83b956842be8a=1639227951; Hm_lpvt_9152f8221cb6243a53c83b956842be8a=1639227964; srcid=eyJ0Ijoie1wiZGF0YVwiOlwiMjY4NjJlNmExMzQyMzA4YTBlMDEyMDgyZjM4NDUwYWNjNjkwNDNjY2FiYjdiMGI4OWQyNzEyOGI0YzBjZDM3ZmFjYjhkZWQ2NDdjOWJhYzRlZjkyMGJiODY5ODUyOTg0ZjY0OTI4YTU3NzEyOWJjMzIyZTAyYTUzYTJlNWY3ODIwODJkOTU4Y2ViZjM5MmQxZDZjN2YxODZmNTQzNzI2ZDdlZTE0N2Y2NmI2ZTM0ZDZjYmQ5NTYzMWY1ZWMxY2I1NTBiNDhjMDZjY2FlZDBmM2Y5NDU4YmE5N2I0MTliOTY2Mzk2YWQwNDUwZTJhYmFjMWU2ZGYxYmNmODA5NTU4MGIzNWQ0MmQxNzllMTcxYWZjYTdlMzQyN2ZkZDUwYTY4MDk4NWI1YzhhNmFkMTI3ZTM3NTJiM2YxOTM2NDlkNThcIixcImtleV9pZFwiOlwiMVwiLFwic2lnblwiOlwiMjZhOTkzYWJcIn0iLCJyIjoiaHR0cHM6Ly94bS5rZS5jb20vZXJzaG91ZmFuZy90b25nYW4vIiwib3MiOiJ3ZWIiLCJ2IjoiMC4xIn0='
 }
 
 
@@ -68,9 +68,9 @@ def getDetail(singurl):
             jianzhushijian, peibeidianti,chaquanleix,guapaishijianStr]
 
 # 一个地区最多获取一百页
-for j in range(1, 100):
+for j in range(1, 66):
     print('当前获取页码------------',j)
-    url = 'https://xm.ke.com/ershoufang/xiangan/pg' + str(j) + '/'
+    url = 'https://xm.ke.com/ershoufang/tongan/pg' + str(j) + '/'
     res = requests.get(url, headers=headers).content.decode('utf-8')
     # print(res)
     soup = BeautifulSoup(res, "lxml")
@@ -80,8 +80,8 @@ for j in range(1, 100):
         url = i['href']
         singleInfo = getDetail(url)
         # 存储
-        df = pd.read_csv('厦门一百页数据.csv', encoding='utf-8')
+        df = pd.read_csv('厦门.csv', encoding='utf-8')
         df.loc[len(df)] = singleInfo  # 其中loc[]中需要加入的是插入地方dataframe的索引，默认是整数型
         df.columns = ['区域', '小区', '总价', '房型', '面积', '单价', '朝向', '楼层位置', '装修情况', '建筑时间', '是否有电梯','产权类型','挂牌时间']
-        df.to_csv('厦门一百页数据.csv', index=False, encoding='utf_8_sig')
+        df.to_csv('厦门.csv', index=False, encoding='utf_8_sig')
     time.sleep(random.randint(1, 10))

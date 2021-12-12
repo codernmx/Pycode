@@ -28,7 +28,7 @@ headers = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,imag
 #     writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
 #     writer.writeheader()
 all_info = []
-for page_number in range(1, 50):
+for page_number in range(1, 3):
     page_url = "http://www.woshipm.com/category/pmd/page/{}".format(page_number)
     print('正在抓取第' + str(page_number) + '页>>>')
     response = requests.get(url=page_url, headers=headers, allow_redirects=True)

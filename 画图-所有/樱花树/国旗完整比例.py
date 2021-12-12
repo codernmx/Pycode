@@ -2,7 +2,6 @@ import turtle
 import math
 
 turtle.up()
-# 为了实现国旗（比例330:220）在中间显示，首先把起始点移到绝对位置（-165，-110）
 turtle.goto(-165, -110)
 turtle.down()
 turtle.begin_fill()
