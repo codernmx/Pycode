@@ -8,9 +8,9 @@ from aip import AipOcr
 
 """ 你的 APPID AK SK """
 APP_ID = '25216043'
-API_KEY = 'Gm13jGTraOZHq5EW33ATuQRr'
+API_KEY = ''
 SECRET_KEY = 'oSUBrw1EG98n9x8AjpW9CEe1QXYWPul7'
-dir = r"D:\PycharmCode\pycode\文字-SDK\pdfFile"  # 设置工作路径
+dir = r'E:\PyCharmCode\文档-学习\文字-SDK\img'  # 设置工作路径
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 
@@ -36,14 +36,13 @@ def getNumber(file_name):
     options["detect_direction"] = "true"
     options["probability"] = "true"
     wordList = client.basicAccurate(pdf_file, options)
-    print(wordList)
-    for i in wordList:
-        print(i)
-        # if ('发货单号' in i['words']):
-        #     cutStr = i['words'].split('：')
-        #     finalStr = cutStr[len(cutStr) - 1]
-        #     print(finalStr)
-        #     return finalStr
+    # print(wordList)
+    for i in wordList['words_result']:
+        if ('入库单号' in i['words']):
+            cutStr = i['words'].split('：')
+            finalStr = cutStr[len(cutStr) - 1]
+            print(finalStr)
+            return finalStr
 
 
 if __name__ == '__main__':
@@ -51,14 +50,13 @@ if __name__ == '__main__':
     allPath = getAllFile()
     print(len(allPath), '总文件个数')
     allInfo = []
-    for i in allPath[0:1]:
+    for i in allPath:
         print(i)
         number = getNumber(i)
-        # allInfo.append([i, number])
-        # print('-------------------------------------------------->>>>>>>>', number)
-
-    # df = pd.DataFrame(allInfo)
-    # df.columns = ['图片名称', '单号']
-    # fileName = time.time()
-    # fileName = math.floor(fileName * 1000)
-    # df.to_csv(str(fileName) + '.csv', encoding='utf_8_sig')
+        allInfo.append([i, number])
+        print('-------------------------------------------------->>>>>>>>', number)
+    df = pd.DataFrame(allInfo)
+    df.columns = ['图片名称', '单号']
+    fileName = time.time()
+    fileName = math.floor(fileName * 1000)
+    df.to_csv(str(fileName) + '.csv', encoding='utf_8_sig')

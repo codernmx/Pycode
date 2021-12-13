@@ -31,9 +31,5 @@ print(a)
 
 # print(df.head(10))
 
-
-
-
-
 df.to_csv('北京处理之后.csv', index=False, encoding='utf_8_sig')
 
