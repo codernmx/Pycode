@@ -1,21 +1,8 @@
 import turtle
 
-turtle.fillcolor("red")
-turtle.pencolor("red")
-turtle.up()
-turtle.goto(-300, 300)
-turtle.down()
-turtle.begin_fill()
-for i in range(2):
-    turtle.forward(600)
-    turtle.right(90)
-    turtle.forward(400)
-    turtle.right(90)
-turtle.end_fill()
-
+turtle.screensize(400, 700, "red")
 turtle.fillcolor("yellow")
 turtle.pencolor("yellow")
-
 turtle.up()
 turtle.goto(10, 220)
 turtle.seth(225)
@@ -65,6 +52,13 @@ turtle.down()
 turtle.begin_fill()
 turtle.circle(20)
 turtle.end_fill()
+turtle.penup()
+
+turtle.goto(0, -100)
+turtle.pendown()
+turtle.color('white')
+turtle.write('不忘初心，牢记使命', font=("Arial", 40, "normal"), align='center')
+
 turtle.hideturtle()  # 隐藏小海龟
 # 维持面板
 turtle.done()
