@@ -10,7 +10,7 @@ from aip import AipOcr
 APP_ID = '25216043'
 API_KEY = ''
 SECRET_KEY = 'oSUBrw1EG98n9x8AjpW9CEe1QXYWPul7'
-dir = r'E:\PyCharmCode\文档-学习\文字-SDK\img'  # 设置工作路径
+dir = r'D:\PycharmCode\pycode\文字-SDK\img'  # 设置工作路径
 
 client = AipOcr(APP_ID, API_KEY, SECRET_KEY)
 
@@ -38,10 +38,11 @@ def getNumber(file_name):
     wordList = client.basicAccurate(pdf_file, options)
     # print(wordList)
     for i in wordList['words_result']:
-        if ('入库单号' in i['words']):
+        if ('2101' in i['words']):
+            print(i['words'])
             cutStr = i['words'].split('：')
             finalStr = cutStr[len(cutStr) - 1]
-            print(finalStr)
+            print(finalStr,'------------------------------')
             return finalStr
 
 
