@@ -56,6 +56,15 @@ def getDetail(singurl):
     if not isYong:
         fangwuyongtu = ''
 
+
+    # 写入txt
+    with open('news_data.txt', 'a+', encoding='utf-8') as f:
+            # print(line)
+            # str(line[0])：csv中第0列；+','+：csv两列之间保存到txt用逗号（，）隔开；'\n'：读取csv每行后在txt中换行
+        f.write((str(huxing) + ',' + str(louceng) + ',' + str(mianji) + str(zhuangxiuqingkuang) + ',' + str(
+            jiage) + ',' + str(xiaoqu) + ',' + str(quyu) + ',' + str(fangwuchaoxiang) + ',' + str(
+            peibeidianti) + ',' + str(guapaishijianStr) + ',' + str(fangwuyongtu) + '\n'))
+
     return [huxing, louceng, mianji, zhuangxiuqingkuang, jiage, xiaoqu, quyu, fangwuchaoxiang, peibeidianti,
             guapaishijianStr, fangwuyongtu]
 
