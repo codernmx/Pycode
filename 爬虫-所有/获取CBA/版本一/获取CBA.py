@@ -18,8 +18,13 @@ def getDetailInfo(url):
         time = i.contents[1].string  # 时间
         zhu = i.contents[3].string  # 主队
         score = i.contents[5].string  # 比分情况
+        score = score.replace(' ','')
+        score = score.replace('\n','')
+        score = score.replace('\t','')
+        scoreList = score.split(':')
+        # print(score.split(':'))
         ke = i.contents[7].string  # 客队
-        singleInfo.append([title,time,zhu,score,ke])
+        singleInfo.append([title,time,zhu,scoreList[0],ke,scoreList[1],score])
     return singleInfo
 res = requests.get(url, headers=headers).content.decode('utf-8')
 soup = BeautifulSoup(res, "lxml")
@@ -31,5 +36,5 @@ for i in allList:
         singleInfo = getDetailInfo(singleUrl) #传入函数
         allInfo.extend(singleInfo)
 df = pd.DataFrame(allInfo)  #转为dataframe
-df.columns = ['球队名', '比赛时间', '主队', '得分情况', '客队'] #设置表头
+df.columns = ['球队名', '比赛时间', '主队', '得分', '客队','得分','比分情况'] #设置表头
 df.to_csv('CBA.csv', encoding='utf_8_sig') #存入csv
