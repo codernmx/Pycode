@@ -8,14 +8,6 @@ import pandas as pd
 import json
 import random
 
-conn = pymysql.connect(
-    host='127.0.0.1',
-    user='root',
-    passwd='137928',  # 数据库密码
-    db='beike',
-    charset='utf8mb4'
-)
-cursor = conn.cursor()
 
 headers = {
     "User-Agent": 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.55 Safari/537.36 Edg/96.0.1054.34',
@@ -66,14 +58,6 @@ def getDetail(singurl):
         guapaishijianStr = ''
     if not isYong:
         fangwuyongtu = ''
-
-    try:
-        sql = f"INSERT INTO bj_info (`bj_unitType`, `bj_floor`, `bj_acreage`, `bj_condition`, `bj_total`, `bj_community`, `bj_area`, `bj_direction`, `bj_elevator`, `bj_listedTime`, `bj_useType`, `bj_price`) VALUES ('{huxing}', '{louceng}', '{mianji}', '{zhuangxiuqingkuang}', '{jiage}', '{xiaoqu}', '{quyu}', '{fangwuchaoxiang}', '{peibeidianti}', '{guapaishijianStr}', '{fangwuyongtu} ', '{danjia}')"
-        cursor.execute(sql)
-        print('写入数据库成功！！')
-    except:
-        print('写入数据库失败！！请检查')
-
     # 户型, 楼层, 面积, 装修情况, 价格, 小区, 区域, 房屋朝向, 配置电梯, 挂牌时间, 房屋用途, 单价
     return [huxing, louceng, mianji, zhuangxiuqingkuang, jiage, xiaoqu, quyu, fangwuchaoxiang, peibeidianti,
             guapaishijianStr, fangwuyongtu, danjia]

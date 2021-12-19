@@ -178,7 +178,7 @@ if __name__ == '__main__':
                 drawBar('2021', info['2021']['data_x'], info['2021']['data_y']),
             )
         )
-        # page.render('晴雨天天数柱状图.html')   #渲染页面要自己打开拿到chart_config   然后不要这个渲染  直接下边save 得到最终页面
+        page.render('晴雨天天数柱状图.html')   #渲染页面要自己打开拿到chart_config   然后不要这个渲染  直接下边save 得到最终页面
         # Page.save_resize_html('晴雨天天数柱状图.html', cfg_file='chart_config (3).json', dest='晴雨天天数柱状图-最终.html')
 
 

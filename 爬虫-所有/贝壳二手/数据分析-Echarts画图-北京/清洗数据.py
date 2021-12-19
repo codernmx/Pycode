@@ -1,6 +1,4 @@
 import pandas as pd
-from matplotlib import pyplot as plt
-from matplotlib.ticker import MultipleLocator
 
 df = pd.read_csv('北京.csv', encoding='utf-8')
 pd.set_option('display.max_columns', None)
