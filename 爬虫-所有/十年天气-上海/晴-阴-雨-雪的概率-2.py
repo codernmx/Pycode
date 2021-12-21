@@ -40,7 +40,7 @@ def drawPie(year, PieData):
         Pie()
             .add("", [list(z) for z in zip(x_data, PieData)])
             .set_global_opts(title_opts=opts.TitleOpts(title=year + "年晴-阴-雨-雪的概率"))
-            .set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}"))
+            .set_series_opts(label_opts=opts.LabelOpts(formatter="{b}: {c}%"))
         # .render("pie_base.html")
     )
     return c

@@ -39,7 +39,7 @@ def absolute_value(val):
 
 
 if __name__ == '__main__':
-    FJWeatherData = pd.ExcelFile(r'数据/福州天气爬虫.xlsx')  # 读取天气数据
+    FJWeatherData = pd.ExcelFile(r'福州天气爬虫.xlsx')  # 读取天气数据
     # 数据按年份分了sheet存储,每次提取一个sheet即可
     SheetNames = FJWeatherData.sheet_names  # 获取福州天气爬虫工作区的工作表名称，一年一个工作区
     plt.figure(1)
@@ -51,7 +51,7 @@ if __name__ == '__main__':
     plt.rcParams['font.sans-serif'] = ['SimHei']
     plt.rcParams['axes.unicode_minus'] = False
     for i in SheetNames:  # i为年份
-        OneYearData = pd.read_excel('数据/福州天气爬虫.xlsx', sheet_name = i)
+        OneYearData = pd.read_excel('福州天气爬虫.xlsx', sheet_name = i)
         OneYearData = list(OneYearData['天气状况'])
         PieData = StatisticOneYear(OneYearData)  # 获得天数统计的list
         ax = plt.subplot(4, 3, k)  # 选中子区域
