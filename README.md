@@ -1,9 +1,3 @@
-- 👨‍    💻Python小工具合集
-- 🏡    💻Python小工具合集
-- 🌱    💻Python小工具合集
-- 😺    💻Python小工具合集
-- 💬    💻Python小工具合集
-- 👬    💻Python小工具合集
-- ✨    💻Python小工具合集
-- 🤔    💻Python小工具合集
-- 🐧    💻Python小工具合集
+
+# Python小工具合集，包括发送邮件，获取天气数据，哔哩弹幕，评论，turtle画图，爬虫，贝壳二手房，51JOB，猫眼Top，微博文章，微博热榜，CBA数据，批量下载图片，可视化，记得Stars。
+- 👨‍ 🏡 🌱 😺 💬 👬 ✨ 🤔 🐧 💻
