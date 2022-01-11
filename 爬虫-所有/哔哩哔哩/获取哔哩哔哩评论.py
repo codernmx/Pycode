@@ -2,13 +2,11 @@ import json
 import math
 import random
 import time
-
 import pandas as pd
 import requests
 
 name = '【罗翔】最高院对“百香果女孩”案调卷审查'
 oid =968129114
-
 
 ts = time.time()
 ts = math.floor(ts * 1000)
@@ -26,10 +24,6 @@ for page in range(0, 51):
         "_": ts
     }
     url = 'https://api.bilibili.com/x/v2/reply/main'
-    # proxies = {
-    #     'https': 'https://127.0.0.1:1080',
-    #     'http': 'http://127.0.0.1:1080'
-    # }
     response = requests.get(url, params=params).content.decode('utf-8')
     # print(response)
     data = json.loads(response)['data']['replies']

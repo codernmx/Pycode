@@ -1,7 +1,7 @@
 import os
 import pandas as pd
-imgPath = 'E:\\PyCharmCode\\文档-学习\\文字-SDK\\img\\'  #需要修改的文件夹路径
-df = pd.read_csv('1639411056692.csv', index_col=['图片名称', '单号'])
+imgPath = 'D:\\PycharmCode\\pycode\\文字-SDK-包括PDF转图片\\img'  #需要修改的文件夹路径
+df = pd.read_csv('1641874413656.csv', index_col=['图片名称', '单号'])
 num = 0
 for row in df.iterrows():
     path = row[0][0]
