@@ -5,13 +5,16 @@ from flask import Flask, request, jsonify
 import hashlib
 from hashlib import md5
 from error import success, fail
+from werkzeug.middleware.proxy_fix import ProxyFix  # nginx代理
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app)
 config = {
     "appid": 'wx285a242d191f9226',
     "secret": '9a2df59bab8c6b744cf699749d5d6263',
     'appidFanyi': '20210824000926272',
     'appkey': 'PnMbaUZ5Y_yjxpQHMdVH',
+    'ak': 'Z2mZbxYsOQllRq7MqFspSrYNqG9uPa20',  # 百度ip的key值
 
 }
 
@@ -22,13 +25,39 @@ config = {
 # sql = f"select * from info where title like '%{title}%'"  搜索
 # 连接数据库
 def coon():
-    # db = pymysql.connect(host="localhost", user="root", password="137928", database="BJCX", port=3306)
-    db = pymysql.connect(host="49.232.153.152", user="BJCX", password="YpM8X7pF4wXCTZ7t", database="BJCX", port=3306)
+    db = pymysql.connect(host="localhost", user="root", password="137928", database="BJCX", port=3306)
+    # db = pymysql.connect(host="49.232.153.152", user="BJCX", password="YpM8X7pF4wXCTZ7t", database="BJCX", port=3306)
     cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
     return cursor
 
 
 cursor = coon()
+
+
+def notice(nickName=None, thing=None):
+    try:
+        ip = request.remote_addr
+        # 请求百度查ip地址
+        ipUrl = 'https://api.map.baidu.com/location/ip?ak=%s&ip=%s&coor=bd09ll' % (config['ak'], ip)
+        response = requests.get(ipUrl)
+        data = json.loads(response.text)
+        address = data['content']['address']
+        #添加到log表中
+
+        sql = f"insert into m_user (openid,avatarUrl,nickName) values ('{openid}','{avatarUrl}','{nickName}')"
+        try:
+            cursor.execute(sql)
+        except:
+            cursor = coon()
+            cursor.execute(sql)
+
+        # 手机发送通知
+        url = 'https://api.day.app/ETH6H7jpx6yLfwUKzMUqzV/便捷出行Pro/%s %s' % (nickName, thing)
+        requests.get(url)
+    except:
+        # 手机发送通知
+        url = 'https://api.day.app/ETH6H7jpx6yLfwUKzMUqzV/便捷出行Pro/%s' % ('报错了额~~')
+        requests.get(url)
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -43,10 +72,7 @@ def getUserInfo():
 
     avatarUrl = request.get_json().get('avatarUrl')
     nickName = request.get_json().get('nickName')
-
-    # 手机发送通知
-    notUrl = 'https://api.day.app/ETH6H7jpx6yLfwUKzMUqzV/小小恋情/%s登录了小程序' % (nickName)
-    r = requests.get(notUrl)
+    notice(nickName, '首次登录')
 
     url = 'https://api.weixin.qq.com/sns/jscode2session?appid={}&secret={}&js_code={}&grant_type=authorization_code'.format(
         config['appid'], config['secret'], code)
@@ -56,7 +82,6 @@ def getUserInfo():
     openid = data['openid']
 
     sql = f"SELECT id,avatarUrl,nickName FROM m_user WHERE openid = '{openid}'"
-    # sql = f"SELECT * FROM USER WHERE USER = '{user}' AND PASSWORD ='{password}' "
     try:
         cursor.execute(sql)
     except:
@@ -84,134 +109,14 @@ def login():
     data = json.loads(response)
     print(data['openid'])
     openid = data['openid']
+    notice(openid, '二次登录')
 
     sql = f"SELECT * FROM m_user WHERE openid = '{openid}'"
-    # sql = f"SELECT * FROM USER WHERE USER = '{user}' AND PASSWORD ='{password}' "
     try:
         cursor.execute(sql)
     except:
         cursor = coon()
         cursor.execute(sql)
-    res = cursor.fetchall()
-    return success(res, '请求成功')
-
-
-@app.route('/api/getList', methods=['POST', 'GET'])
-def getInfoList():
-    # 拿到请求参数
-    id = request.get_json().get('id')
-    m_status = request.get_json().get('m_status')
-
-    sql = f"select * from m_info where m_type = '{id}' and m_status = '{m_status}'"
-    try:
-        cursor.execute(sql)
-    except:
-        cursor = coon()
-        cursor.execute(sql)
-    # # 获取所有记录列表
-    res = cursor.fetchall()
-    return success(res, '请求成功')
-
-
-# 获取自己发布的
-@app.route('/api/getList/my', methods=['POST', 'GET'])
-def getInfoListMy():
-    # 拿到请求参数
-    id = request.get_json().get('id')
-
-    sql = f"select * from m_info where m_user = '{id}'"
-    try:
-        cursor.execute(sql)
-    except:
-        cursor = coon()
-        cursor.execute(sql)
-    # # 获取所有记录列表
-    res = cursor.fetchall()
-    return success(res, '请求成功')
-
-
-# 修改自己发布的
-@app.route('/api/info/update', methods=['POST', 'GET'])
-def getInfoUpdate():
-    # 拿到请求参数
-    id = request.get_json().get('id')
-    m_status = request.get_json().get('m_status')
-
-    sql = f"UPDATE m_info set m_status = '{m_status}' where id = '{id}'"
-    print(sql)
-    try:
-        cursor.execute(sql)
-    except:
-        cursor = coon()
-        cursor.execute(sql)
-    # # # 获取所有记录列表
-    res = cursor.fetchall()
-    return success(res, '请求成功')
-
-
-# 获取列表和详细信息
-@app.route('/api/get/message', methods=['POST', 'GET'])
-def getInfoDetails():
-    # 拿到请求参数
-    id = request.json.get('id')
-    sql = f"select * from m_message where infoId = '{id}'"
-    try:
-        cursor.execute(sql)
-    except:
-        cursor = coon()
-        cursor.execute(sql)
-    # # 获取所有记录列表
-    res = cursor.fetchall()
-
-    # 订单信息
-    sql = f"select * from m_info where id = '{id}'"
-    cursor.execute(sql)  # 执行SQL语句
-    # # 获取所有记录列表
-    info = cursor.fetchall()
-    return success({
-        "info": info,
-        "list": res
-    }, '请求成功')
-
-
-# 发送信息
-@app.route('/api/insert/message', methods=['POST', 'GET'])
-def insertMessage():
-    # 拿到请求参数
-    userId = request.get_json().get('userId')
-    infoId = request.get_json().get('infoId')
-    content = request.get_json().get('content')
-    avatarUrl = request.get_json().get('avatarUrl')
-
-    sql = f"insert into m_message (userId,infoId,content,avatarUrl) values ('{userId}','{infoId}','{content}','{avatarUrl}')"
-    print(sql)
-    try:
-        cursor.execute(sql)
-    except:
-        cursor = coon()
-        cursor.execute(sql)
-    # # # 获取所有记录列表
-    res = cursor.fetchall()
-    return success(res, '请求成功')
-
-
-@app.route('/api/info/insert', methods=['POST', 'GET'])
-def getInfoInsert():
-    # 拿到请求参数
-    content = request.get_json().get('content')
-    price = request.get_json().get('price')
-    qqNumber = request.get_json().get('qqNumber')
-    m_user = request.get_json().get('id')
-    type = request.get_json().get('type')
-
-    sql = f"insert into m_info (m_title,m_price,m_type,m_qq,m_user) values ('{content}','{price}','{type}','{qqNumber}','{m_user}')"
-    print(sql)
-    try:
-        cursor.execute(sql)
-    except:
-        cursor = coon()
-        cursor.execute(sql)
-    # # # 获取所有记录列表
     res = cursor.fetchall()
     return success(res, '请求成功')
 
@@ -219,25 +124,21 @@ def getInfoInsert():
 @app.route('/api/fanyi/baidu/translate/word', methods=['POST', 'GET'])
 # 翻译接口
 def translate():
-    # request.get_data()
+    notice('文字')
     from_lang = request.get_json().get('from_lang')
     to_lang = request.get_json().get('to_lang')
     query = request.get_json().get('query')
     try:
-        appid = config['appidFanyi']
-        appkey = config['appkey']
-        endpoint = 'http://api.fanyi.baidu.com'
-        path = '/api/trans/vip/translate'
-        url = endpoint + path
+        url = 'http://api.fanyi.baidu.com/api/trans/vip/translate'
 
         def make_md5(s, encoding='utf-8'):
             return md5(s.encode(encoding)).hexdigest()
 
         salt = random.randint(32768, 65536)
-        sign = make_md5(appid + query + str(salt) + appkey)
+        sign = make_md5(config['appidFanyi'] + query + str(salt) + config['appkey'])
         headers = {'Content-Type': 'application/x-www-form-urlencoded'}
         payload = {
-            'appid': appid,
+            'appid': config['appidFanyi'],
             'q': query,
             'from': from_lang,
             'to': to_lang,
@@ -246,30 +147,21 @@ def translate():
         }
         r = requests.post(url, params=payload, headers=headers)
         result = r.json()
-        # return JsonResponse({'data': result})
         return success({'data': result}, '请求成功')
     except BaseException as error:
-        # return JsonResponse({'error': error,'msg':'请求参数错误','success':False})
-        # return HttpResponseBadRequest()
         return fail("失败", '错误')
 
 
 @app.route('/api/fanyi/baidu/translate/img', methods=['POST', 'GET'])
 # 翻译图片
 def translateFile():
-    # file = request.FILES.get('file')
+    notice('图片')
     file = request.files.get('file')
-    data = request.form.to_dict()   #获取文件携带的参数
+    data = request.form.to_dict()  # 获取文件携带的参数
     from_lang = data['from_lang']
     to_lang = data['to_lang']
     fileData = file.read()
-    endpoint = 'http://api.fanyi.baidu.com'
-    path = '/api/trans/sdk/picture'
-    url = endpoint + path
-    app_id = config['appidFanyi']
-    app_key = config['appkey']
-    cuid = 'APICUID'
-    mac = 'mac'
+    url = 'http://api.fanyi.baidu.com/api/trans/sdk/picture'
 
     def get_md5(string, encoding='utf-8'):
         return md5(string.encode(encoding)).hexdigest()
@@ -279,16 +171,16 @@ def translateFile():
         return hashlib.md5(data).hexdigest()
 
     salt = random.randint(32768, 65536)
-    sign = get_md5(app_id + get_file_md5(fileData) + str(salt) + cuid + mac +
-                   app_key)
+    sign = get_md5(config['appidFanyi'] + get_file_md5(fileData) + str(salt) + 'APICUID' + 'mac' +
+                   config['appkey'])
     payload = {
         'from': from_lang,
         'to': to_lang,
-        'appid': app_id,
+        'appid': config['appidFanyi'],
         'salt': salt,
         'sign': sign,
-        'cuid': cuid,
-        'mac': mac
+        'cuid': 'APICUID',
+        'mac': 'mac'
     }
     response = requests.post(url, params=payload, files={'image': fileData})
     result = response.json()
