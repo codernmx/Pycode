@@ -44,7 +44,7 @@ def notice(nickName=None, thing=None):
         address = data['content']['address']
         #添加到log表中
 
-        sql = f"insert into m_user (openid,avatarUrl,nickName) values ('{openid}','{avatarUrl}','{nickName}')"
+        sql = f"insert into LOG (IP,ADDRESS) values ('{ip}','{address}')"
         try:
             cursor.execute(sql)
         except:
