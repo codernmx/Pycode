@@ -110,7 +110,7 @@ def login():
     data = json.loads(response)
     print(data['openid'])
     openid = data['openid']
-    notice(openid, '登录成功')
+    notice('', '查询用户信息')
 
     sql = f"SELECT * FROM USER WHERE openid = '{openid}'"
     try:
@@ -118,6 +118,51 @@ def login():
     except:
         cursor = coon()
         cursor.execute(sql)
+    res = cursor.fetchall()
+    return success(res, '请求成功')
+
+
+# 获取签到次数
+@app.route('/api/get/sign/total', methods=['POST'])
+def getSignTotal():
+    userId = request.get_json().get('userId')
+    # notice('', '查询用户信息')
+
+    sql = f"SELECT * FROM SIGN_IN WHERE USER_ID = '{userId}'"
+    try:
+        cursor.execute(sql)
+    except:
+        cursor = coon()
+        cursor.execute(sql)
+    res = cursor.fetchall()
+    if len(res) == 0:
+        # 新增一个签到数据
+        sql = f"insert into SIGN_IN (USER_ID) values ('{userId}')"
+        cursor.execute(sql)
+        cursor.connection.commit()
+        res = cursor.fetchall()
+        return success(res, '请求成功')
+    else:
+        return success(res, '请求成功')
+
+
+# 签到板块
+@app.route('/api/sign/in', methods=['POST'])
+def signIn():
+    notice('', '签到')
+    userId = request.get_json().get('userId')
+
+    # 修改签到天数
+    sql = f"UPDATE SIGN_IN SET CONS_TOTAL = ( CASE WHEN TO_DAYS( NOW( ) ) - TO_DAYS( LAST_TIME) <= 1 THEN CONS_TOTAL + 1 WHEN TO_DAYS( NOW( ) ) - TO_DAYS( LAST_TIME) > 1 THEN 1 END) WHERE USER_ID = {userId}"
+    try:
+        cursor.execute(sql)
+        cursor.connection.commit()
+    except:
+        cursor = coon()
+        cursor.execute(sql)
+        cursor.connection.commit()
+    sql = f"SELECT * FROM SIGN_IN WHERE USER_ID = '{userId}'"
+    cursor.execute(sql)
     res = cursor.fetchall()
     return success(res, '请求成功')
 
