@@ -3,7 +3,6 @@
 # @SoftWare : PyCharm
 '''小小爱心火柴人'''
 from turtle import *
-from time import sleep
 
 bgcolor('azure')
 pensize(6)

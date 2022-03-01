@@ -10,10 +10,10 @@ from werkzeug.middleware.proxy_fix import ProxyFix  # nginx代理
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 config = {
-    "appid": 'wx285a242d191f9226',
-    "secret": '9a2df59bab8c6b744cf699749d5d6263',
-    'appidFanyi': '20210824000926272',
-    'appkey': 'PnMbaUZ5Y_yjxpQHMdVH',
+    "appid": 'wx285a242d191f9226', #小程序appid
+    "secret": '9a2df59bab8c6b744cf699749d5d6263', #小程序秘钥
+    'appidFanyi': '20210824000926272', #百度翻译
+    'appkey': 'PnMbaUZ5Y_yjxpQHMdVH', #百度翻译
     'ak': 'Z2mZbxYsOQllRq7MqFspSrYNqG9uPa20',  # 百度ip的key值
 
 }
@@ -34,34 +34,34 @@ def coon():
 cursor = coon()
 
 
+# 通知信息
 def notice(nickName=None, thing=None):
+    ip = request.remote_addr
+    # 请求百度查ip地址
+    ipUrl = 'https://api.map.baidu.com/location/ip?ak=%s&ip=%s&coor=bd09ll' % (config['ak'], ip)
+    response = requests.get(ipUrl)
+    data = json.loads(response.text)
+    print(data)
+    address = data['content']['address']
+
+    # 添加到log表中
+    sql = f"insert into LOG (IP,ADDRESS,ACTION) values ('{ip}','{address}','{thing}')"
+    print(sql)
     try:
-        ip = request.remote_addr
-        # 请求百度查ip地址
-        ipUrl = 'https://api.map.baidu.com/location/ip?ak=%s&ip=%s&coor=bd09ll' % (config['ak'], ip)
-        response = requests.get(ipUrl)
-        data = json.loads(response.text)
-        address = data['content']['address']
-        #添加到log表中
-
-        sql = f"insert into LOG (IP,ADDRESS) values ('{ip}','{address}')"
-        try:
-            cursor.execute(sql)
-        except:
-            cursor = coon()
-            cursor.execute(sql)
-
-        # 手机发送通知
-        url = 'https://api.day.app/ETH6H7jpx6yLfwUKzMUqzV/便捷出行Pro/%s %s' % (nickName, thing)
-        requests.get(url)
+        cursor.execute(sql)
+        cursor.connection.commit()  # 不提交加不进去
     except:
-        # 手机发送通知
-        url = 'https://api.day.app/ETH6H7jpx6yLfwUKzMUqzV/便捷出行Pro/%s' % ('报错了额~~')
-        requests.get(url)
+        cursor = coon()
+        cursor.execute(sql)
+        cursor.connection.commit()
+    # 手机发送通知
+    url = 'https://api.day.app/ETH6H7jpx6yLfwUKzMUqzV/便捷出行Pro/%s %s' % (nickName, thing)
+    requests.get(url)
 
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    notice('', '访问主页')
     return success("便捷出行Pro", '请求成功')
 
 
@@ -72,7 +72,6 @@ def getUserInfo():
 
     avatarUrl = request.get_json().get('avatarUrl')
     nickName = request.get_json().get('nickName')
-    notice(nickName, '首次登录')
 
     url = 'https://api.weixin.qq.com/sns/jscode2session?appid={}&secret={}&js_code={}&grant_type=authorization_code'.format(
         config['appid'], config['secret'], code)
@@ -81,7 +80,7 @@ def getUserInfo():
     print(data['openid'])
     openid = data['openid']
 
-    sql = f"SELECT id,avatarUrl,nickName FROM m_user WHERE openid = '{openid}'"
+    sql = f"SELECT id,avatarUrl,nickName FROM USER WHERE openid = '{openid}'"
     try:
         cursor.execute(sql)
     except:
@@ -89,13 +88,15 @@ def getUserInfo():
         cursor.execute(sql)
     res = cursor.fetchall()
     if len(res) == 0:
-        sql = f"insert into m_user (openid,avatarUrl,nickName) values ('{openid}','{avatarUrl}','{nickName}')"
+        notice(nickName, '创建用户')
+        sql = f"insert into USER (openid,avatarUrl,nickName) values ('{openid}','{avatarUrl}','{nickName}')"
         cursor.execute(sql)
-        sql = f"SELECT id,avatarUrl,nickName FROM m_user WHERE openid = '{openid}'"
+        sql = f"SELECT id,avatarUrl,nickName FROM USER WHERE openid = '{openid}'"
         cursor.execute(sql)
         res = cursor.fetchall()
         return success(res, '请求成功')
     else:
+        notice(nickName, '登录成功')
         return success(res[0], '请求成功')
 
 
@@ -109,9 +110,9 @@ def login():
     data = json.loads(response)
     print(data['openid'])
     openid = data['openid']
-    notice(openid, '二次登录')
+    notice(openid, '登录成功')
 
-    sql = f"SELECT * FROM m_user WHERE openid = '{openid}'"
+    sql = f"SELECT * FROM USER WHERE openid = '{openid}'"
     try:
         cursor.execute(sql)
     except:
@@ -124,7 +125,7 @@ def login():
 @app.route('/api/fanyi/baidu/translate/word', methods=['POST', 'GET'])
 # 翻译接口
 def translate():
-    notice('文字')
+    notice('', '识别文字')
     from_lang = request.get_json().get('from_lang')
     to_lang = request.get_json().get('to_lang')
     query = request.get_json().get('query')
@@ -155,7 +156,7 @@ def translate():
 @app.route('/api/fanyi/baidu/translate/img', methods=['POST', 'GET'])
 # 翻译图片
 def translateFile():
-    notice('图片')
+    notice('', '识别图片')
     file = request.files.get('file')
     data = request.form.to_dict()  # 获取文件携带的参数
     from_lang = data['from_lang']
