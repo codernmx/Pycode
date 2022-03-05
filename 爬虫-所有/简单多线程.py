@@ -1,7 +1,6 @@
 import threading
 import time
 import requests
-from bs4 import BeautifulSoup
 
 urls = [
     f"https://www.cnblogs.com/sitehome/p/{page}"

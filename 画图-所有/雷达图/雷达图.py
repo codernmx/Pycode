@@ -4,6 +4,7 @@ from pyecharts import options as opts
 from pyecharts.charts import Line, Radar, Bar, Page, Scatter
 
 df = pd.read_excel('各地区预期寿命不同省份_雷达图.xlsx')
+
 df = df.dropna()
 two = df[['地区', '预期寿命_合计(岁)']]
 area = []
