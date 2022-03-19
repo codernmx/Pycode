@@ -10,10 +10,10 @@ from werkzeug.middleware.proxy_fix import ProxyFix  # nginx代理
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 config = {
-    "appid": 'wx285a242d191f9226', #小程序appid
-    "secret": '9a2df59bab8c6b744cf699749d5d6263', #小程序秘钥
-    'appidFanyi': '20210824000926272', #百度翻译
-    'appkey': 'PnMbaUZ5Y_yjxpQHMdVH', #百度翻译
+    "appid": 'wx285a242d191f9226',  # 小程序appid
+    "secret": '9a2df59bab8c6b744cf699749d5d6263',  # 小程序秘钥
+    'appidFanyi': '20210824000926272',  # 百度翻译
+    'appkey': 'PnMbaUZ5Y_yjxpQHMdVH',  # 百度翻译
     'ak': 'Z2mZbxYsOQllRq7MqFspSrYNqG9uPa20',  # 百度ip的key值
 
 }
@@ -110,7 +110,6 @@ def login():
     data = json.loads(response)
     print(data['openid'])
     openid = data['openid']
-    notice('', '查询用户信息')
 
     sql = f"SELECT * FROM USER WHERE openid = '{openid}'"
     try:
@@ -128,7 +127,7 @@ def getSignTotal():
     userId = request.get_json().get('userId')
     # notice('', '查询用户信息')
 
-    sql = f"SELECT * FROM SIGN_IN WHERE USER_ID = '{userId}'"
+    sql = f"SELECT CAST(LAST_TIME AS CHAR) AS LAST_TIME,CAST(CREATE_TIME AS CHAR) AS CREATE_TIME,CAST(UPDATE_TIME AS CHAR) AS UPDATE_TIME,USER_ID,ID,CONS_TOTAL FROM SIGN_IN WHERE USER_ID = '{userId}'"
     try:
         cursor.execute(sql)
     except:
@@ -150,8 +149,10 @@ def getSignTotal():
 @app.route('/api/sign/in', methods=['POST'])
 def signIn():
     notice('', '签到')
-    userId = request.get_json().get('userId')
-
+    try:
+        userId = request.get_json().get('userId')
+    except:
+        return fail("失败", '错误')
     # 修改签到天数
     sql = f"UPDATE SIGN_IN SET CONS_TOTAL = ( CASE WHEN TO_DAYS( NOW( ) ) - TO_DAYS( LAST_TIME) <= 1 THEN CONS_TOTAL + 1 WHEN TO_DAYS( NOW( ) ) - TO_DAYS( LAST_TIME) > 1 THEN 1 END) WHERE USER_ID = {userId}"
     try:
@@ -161,7 +162,7 @@ def signIn():
         cursor = coon()
         cursor.execute(sql)
         cursor.connection.commit()
-    sql = f"SELECT * FROM SIGN_IN WHERE USER_ID = '{userId}'"
+    sql = f"SELECT CAST(LAST_TIME AS CHAR) AS LAST_TIME,CAST(CREATE_TIME AS CHAR) AS CREATE_TIME,CAST(UPDATE_TIME AS CHAR) AS UPDATE_TIME,USER_ID,ID,CONS_TOTAL FROM SIGN_IN WHERE USER_ID = '{userId}'"
     cursor.execute(sql)
     res = cursor.fetchall()
     return success(res, '请求成功')
