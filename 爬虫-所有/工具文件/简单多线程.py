@@ -9,9 +9,8 @@ urls = [
 
 info = []
 def craw(url):
-    print("craw url: ", url)
+    print(url)
     r = requests.get(url)
-    info.append(str(time.time()))
     # return r.text
 
 
@@ -37,4 +36,3 @@ if __name__ == "__main__":
     multi_thread()
     end = time.time()
     print("总共耗时:", end - start, "seconds")
-    print(info)
