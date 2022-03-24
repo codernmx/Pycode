@@ -21,7 +21,7 @@ QG_confirmedCount = []
 QG_confirmedNew = []
 QG_curedNew = []
 QG_deadNew = []
-conn = pymysql.connect(host='49.232.153.152', user='root', password='137928', port=3306, db='yiqing',
+conn = pymysql.connect(host='127.0.0.1', user='root', password='137928', port=3306, db='yiqing',
                        charset='utf8mb4')
 cursor = conn.cursor()
 cursor.execute(
@@ -47,7 +47,7 @@ QG_deadNew.insert(0,0)
 cursor.close()
 conn.close()
 
-conn = pymysql.connect(host='49.232.153.152', user='root', password='137928', port=3306, db='yiqing',
+conn = pymysql.connect(host='127.0.0.1', user='root', password='137928', port=3306, db='yiqing',
                        charset='utf8mb4')
 cursor = conn.cursor()
 sql = "SELECT DISTINCT(countryName) from abroad "
