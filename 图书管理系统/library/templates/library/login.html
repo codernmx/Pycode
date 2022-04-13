@@ -1,0 +1,51 @@
+{% extends 'library/base.html' %}
+
+{% block title %} 请登陆 {% endblock %}
+
+{% load static %}
+<link href="{% static 'library/signin.css' %}" rel="stylesheet">
+
+{% block content %}
+
+    {% if state == 'not_exist_or_password_error' %}
+        <div class="col-md-2 col-md-offset-5">
+            <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                <h2>用户不存在或密码错误</h2>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+
+
+                <form method="POST" role="form" class="form-horizontal" action="/login/">
+                    {% csrf_token %}
+                    <h1 class="form-signin-heading text-center">请登陆</h1>
+
+                    {% for field in loginForm %}
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">{{ field.label }}</label>
+                            <div class="col-md-9">
+                                {{ field }}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                    <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <button class="btn btn btn-primary btn-block" type="submit">登陆</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+

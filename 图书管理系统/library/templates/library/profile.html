@@ -1,0 +1,73 @@
+{% extends "library/base.html" %}
+{% load staticfiles %}
+{% block title %}查看读者信息{% endblock %}
+
+{% block content %}
+
+    {% if state %}
+        <div class="col-md-2 col-md-offset-6">
+            <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                {% if state == 'renew_success' %}
+                    <h2>续借成功</h2>
+                {% elif state == 'return_success' %}
+                    <h2>还书成功</h2>
+                {% elif state == 'borrow_success' %}
+                    <h2>借书成功</h2>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+
+    <div class="container myContainer">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="col-md-5">
+                    <div class="img-rounded profile-photo">
+                        <img src="/media/{{ reader.photo }}" alt="暂无图片">
+                    </div>
+                </div>
+                <div class="col-md-6 col-md-offset-1">
+                    <h2 class="text-center">姓名:{{ reader.name }}</h2>
+                    <br>
+                    <h4><span class="glyphicon glyphicon-phone"></span>
+                        电话：{{ reader.phone }}
+
+                    </h4>
+                    <h4>余额：{{ reader.balance }}</h4>
+                    <h4>可借数量：{{ reader.max_borrowing }}</h4>
+                    <hr>
+                    <table class="table table-bordered">
+                        <thead>
+                        <th>正在借阅:</th>
+                        <th>应还日期：</th>
+                        </thead>
+                        <tbody>
+                        {% for b in borrowing %}
+                            <tr>
+                                <td><h4>{{ b.ISBN.title }}</h4></td>
+                                <td><h4>{{ b.date_due_to_returned|date:'Y-m-d' }}</h4></td>
+                                <td>
+                                    <button class="btn btn-primary"
+                                            onclick="location.href='../book/action?action=renew_book&id={{ b.id }}';">续借
+                                    </button>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary"
+                                            onclick="location.href='../book/action?action=return_book&id={{ b.id }}';">
+                                        还书
+                                    </button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

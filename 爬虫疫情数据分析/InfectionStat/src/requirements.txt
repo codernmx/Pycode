@@ -1,0 +1,5 @@
+flask 
+Beautifulsoup4 
+requests
+pymysql 
+html5lib 

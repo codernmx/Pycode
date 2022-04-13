@@ -1,0 +1,58 @@
+.myJumbotron {
+    background-color: #B0E0E6;
+    margin-bottom: 100px;
+}
+
+.myContainer {
+    margin-bottom: 150px;
+}
+
+.navbar-custom {
+    background-color: #5F9EA0;
+    /*color: ‎#696969;*/
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.footer {
+    height: 30px;
+}
+
+.profile-photo {
+    margin-right: auto;
+}
+
+.navbar-custom .navbar-nav > li > a {
+    color: #fff;
+}
+
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: #ffffff;
+    background-color: transparent;
+}
+
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
+    text-decoration: none;
+    background-color: #33aa33;
+}
+
+.navbar-custom .navbar-brand {
+    color: #eeeeee;
+}
+
+.navbar-custom .navbar-toggle {
+    background-color: #eeeeee;
+}
+
+.navbar-custom .icon-bar {
+    background-color: #33aa33;
+}
+
+.bookcover_img {
+    border: none;
+    width: 90px;
+
+    -moz-box-shadow: 1px 1px 5px #333333;
+    -webkit-box-shadow: 1px 1px 5px #333333;
+    box-shadow: 1px 1px 5px #333333;
+}

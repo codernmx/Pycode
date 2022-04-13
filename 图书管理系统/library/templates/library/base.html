@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'library/bootstrap/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'library/custom.css' %}"/>
+    <script src="{% static 'library/echarts.min.js' %}"></script>
+    <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>{% block title %}{% endblock %}</title>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-custom">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">图书馆</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="/search/?keyword=_书目列表#hint">书目列表</a></li>
+                <li><a href="/statistics/">统计信息</a></li>
+                <li><a href="/about/">关于</a></li>
+            </ul>
+
+            {% if user.is_authenticated %}
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">用户 {{ ' ' }} {{ user.reader.name }}<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/profile/">个人信息</a></li>
+                            <li><a href="#">正在借阅</a></li>
+                            <li><a href="/set_password/">修改密码</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/logout/">登出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            {% else %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/login/">登陆</a></li>
+                    <li><a href="/register/">注册</a></li>
+                </ul>
+
+            {% endif %}
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+
+<header class="jumbotron myJumbotron">
+
+    <div class="container">
+        <h1>图书馆系统</h1>
+        <h3>图书检索、借阅</h3>
+    </div>
+
+</header>
+
+{% block content %}
+{% endblock %}
+
+{#<footer class="panel-footer navbar-fixed-bottom">#}
+{#    <div class="container">#}
+{#        <p class="text-center"><strong></strong></p>#}
+{#        <p class="text-center">©All rights reserved</p>#}
+{#        <h5 class="text-center"> Powered by&nbsp;<a href="/about">Django & Bootstrap</a></h5>#}
+{#    </div>#}
+{#</footer>#}
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'library/jquery-3.1.1.min.js' %}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'library/bootstrap/js/bootstrap.min.js' %}"></script>
+</body>
+</html>

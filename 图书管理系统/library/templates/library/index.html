@@ -1,0 +1,27 @@
+{% extends 'library/base.html' %}
+
+{% block title %} 欢迎来到图书搜索界面！ {% endblock %}
+
+
+{% block content %}
+
+    <div class="container myContainer">
+        <form action="/search/" method="GET"
+            <div class="row col-lg-7 col-lg-offset-3">
+
+                {% for radio in searchForm.search_by %}
+                    <div class="radio-inline">
+                        {{ radio }}
+                    </div>
+                {% endfor %}
+                <div class="input-group">
+                    {{ searchForm.keyword }}
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-lg btn-info" type="submit">图书检索</button>
+                    </span>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

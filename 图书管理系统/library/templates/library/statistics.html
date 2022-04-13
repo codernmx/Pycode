@@ -1,0 +1,64 @@
+{% extends 'library/base.html' %}
+{% load staticfiles %}
+
+{% block title %} 统计信息 {% endblock %}
+
+{% block content %}
+
+    <div class="text-center">
+        <h1>统计信息</h1>
+    </div>
+    <div id="reader-rank" class="col-md-offset-3" style="width: 1000px;height:400px;"></div>
+    <div id="book-rank" class="col-md-offset-3 myContainer" style="width: 1000px;height:400px;"></div>
+    <script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var readerChart = echarts.init(document.getElementById('reader-rank'));
+        var bookChart = echarts.init(document.getElementById('book-rank'));
+
+        // 指定图表的配置项和数据
+        var readerOption = {
+            title: {
+                text: '借书排行榜'
+            },
+            tooltip: {},
+            legend: {
+                data: ['借书量']
+            },
+            xAxis: {
+                data: [ {% for x in readerData %} '{{ x }}', {% endfor %} ]
+
+            },
+            yAxis: {},
+            series: [{
+                name: '借书量',
+                type: 'bar',
+                data: [ {% for x in readerAmountData %} '{{ x }}', {% endfor %} ]
+
+            }]
+        };
+
+        var bookOption = {
+            title: {
+                text: '最受欢迎的图书'
+            },
+            tooltip: {},
+            legend: {
+                data: ['借书量'],
+            },
+            xAxis: {
+                data: [ {% for x in bookData %} '《{{ x }}》', {% endfor %} ]
+
+            },
+            yAxis: {},
+            series: [{
+                name: '借书量',
+                type: 'bar',
+                data: [ {% for x in bookAmountData %} '{{ x }}', {% endfor %} ]
+
+            }]
+        };
+        readerChart.setOption(readerOption);
+        bookChart.setOption(bookOption);
+    </script>
+
+{% endblock %}

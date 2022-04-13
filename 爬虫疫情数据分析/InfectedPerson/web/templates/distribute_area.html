@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/jquery-3.4.1.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/echarts.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/china.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/anhui.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/aomen.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/beijing.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/chongqing.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/fujian.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/gansu.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/guangdong.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/guangxi.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/guizhou.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/hainan.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/hebei.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/heilongjiang.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/henan.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/hubei.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/hunan.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/jiangsu.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/jiangxi.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/jilin.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/jilin.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/liaoning.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/neimenggu.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/ningxia.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/qinghai.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/shandong.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/shanghai.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/shanxi.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/shanxi1.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/sichuan.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/taiwan.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/tianjin.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/xianggang.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/xinjiang.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/xizang.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/yunnan.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename ='js/province/zhejiang.js')}}"></script>
+    <style>
+        *{margin:0;padding:0}
+        html,body{
+            width:100%;
+            height:100%;
+            background-color:#404a59;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="ck" style="float:left ; width:49%; height:90%;border: 1px solid #ddd"></div>
+<div id="ckm" style="float:left ; width:49%; height:90%;border: 1px solid #ddd"></div>
+    <script type="text/javascript">
+        var ck=[{% for i in china %}
+            {name:'{{i.area}}',value:{{i.China_confirm_sum}}},
+        {% endfor %}
+        ]
+       //中国地图展示如下！！！
+
+        var myChart = echarts.init(document.getElementById('ck'));
+        option = {
+            backgroundColor: '#404a59',   //背景color
+            title:{
+              text:'新型冠状病毒肺炎全国分布图',
+                left:'center'
+            },
+            tooltip: {
+                    formatter:function(params){
+                        return params.seriesName+'<br />'+params.name+'：'+params.value
+                    }//数据格式化
+                },
+            visualMap: {
+                min: 0,
+                max: 1500,
+                left: 'left',
+                top: 'bottom',
+                text: ['高','低'],//取值范围的文字
+                inRange: {
+                    color: ['#FFE4B5', 'red']//取值范围的颜色
+                },
+                show:true//图注
+            },
+            geo: {
+                map: 'china',
+                roam: false,//不开启缩放和平移
+                zoom:1.23,//视角缩放比例
+                label: {
+                    normal: {
+                        show: true,
+                        fontSize:'10',
+                        color: 'rgba(0,0,0,0.7)'
+                    }
+                },
+                itemStyle: {
+                    normal:{
+                        borderColor: 'rgba(0, 0, 0, 0.2)'
+                    },
+                    emphasis:{
+                        areaColor: '#389BB7',//鼠标选择区域颜色
+                        shadowOffsetX: 0,
+                        shadowOffsetY: 0,
+                        shadowBlur: 20,
+                        borderWidth: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+
+            series : [
+                {
+                    name: '确诊病例',
+                    type: 'map',
+                    geoIndex: 0,
+                    data:ck
+                }
+            ]
+        };
+        myChart.setOption(option);
+
+
+
+
+
+
+
+        //省级地图展示！！！
+
+
+
+		//这里定义的ckm跟上面定义的ck意思一样
+        var ckm=[{% for j in a %}
+            {name:'{{ j.concat |safe }}',value:{{j.confirm}}},
+        {% endfor %}
+        ]
+
+        function showCity(city){
+        var ppd = echarts.init(document.getElementById('ckm'));
+            option1 = {
+            backgroundColor: '#404a59',
+            title:{
+              text:'新型冠状病毒肺炎省级分布图',
+                left:'center'
+            },
+             tooltip: {
+                    formatter:function(params){
+                        return params.seriesName+'<br />'+params.name+'：'+params.value
+                    }//数据格式化
+                },
+            visualMap: {
+                min: 0,
+                max: 1500,
+                left: 'left',
+                top: 'bottom',
+                text: ['高','低'],//取值范围的文字
+                inRange: {
+                    color: ['#FFE4B5', 'red']//取值范围的颜色
+                },
+                show:true//图注
+            },
+            geo: {
+                map: 'city',
+                roam: false,//不开启缩放和平移
+                zoom:1.23,//视角缩放比例
+                label: {
+                    normal: {
+                        show: true,
+                        fontSize:'10',
+                        color: 'rgba(0,0,0,0.7)'
+                    }
+                }
+            },
+
+            series: [
+                {
+                    name:'确诊病例',
+                    data:ckm,
+                    type: 'map',
+                    mapType: city,
+                    label: {
+                        normal:{
+                            show:true
+                        }
+                    },
+                    itemStyle: {
+                        emphasis: {
+                            areaColor: '#389BB7',
+                            borderWidth: 0
+                        }
+                    },
+                }
+            ]
+        };
+            ppd.setOption(option1)
+        }
+
+
+        showCity('浙江')//打开页面就随着myChart显示
+           myChart.on('click', function (param) {               //myChart点击事件
+               city = param.name;
+               alert(city)
+               showCity(city)
+   	 });
+
+    </script>
+</body>
+</html>

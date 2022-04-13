@@ -1,0 +1,65 @@
+{% extends 'library/base.html' %}
+
+{% block title %} 请登陆 {% endblock %}
+
+{% load static %}
+<link href="{% static 'library/signin.css' %}" rel="stylesheet">
+
+{% block content %}
+
+    {% if state %}
+        <div class="col-md-2 col-md-offset-5">
+            <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert">&times;</a>
+                {% if state == 'success' %}
+                    <h2> 注册成功！ </h2>
+                {% elif state == 'repeat_error' %}
+                    <h2> 密码重复错误 </h2>
+                {% elif state == 'empty' %}
+                    <h2> 密码不能为空 </h2>
+                {% elif state == 'user_exist' %}
+                    <h2> 户已经存在 </h2>
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="container myContainer">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 col-sm-10 col-sm-offset-1">
+
+                <form method="POST" action="/register/" role="form" class="form-horizontal"
+                      enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <h1 class="form-signin-heading text-center">请注册</h1>
+
+                    {% for field in registerForm %}
+                        <div class="form-group">
+                            <label class="col-md-3 control-label">{{ field.label }}</label>
+                            <div class="col-md-9">
+                                {{ field }}
+
+                                {% if field.auto_id == 'id_username' %}
+                                    <span class="help-block">用于登陆，手机号码</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+
+
+                    <div class="form-group">
+                        <div class="col-md-9 col-md-offset-3">
+                            <button class="btn btn btn-primary btn-block" type="submit">注册</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
+
+
