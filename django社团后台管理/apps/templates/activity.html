@@ -1,0 +1,81 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    社团活动{{ title }}
+{% endblock %}
+{% block body %}
+    <body>
+    <script type="text/javascript" src="{{ url_for('static',filename='./lib/ckeditor/ckeditor.js') }}"></script>
+    <div class="x-body">
+        <form class="layui-form layui-form-pane">
+            {% for foo in form %}
+                <div class="layui-form-item {% if foo.name=='mass_introduce' %}layui-form-text{% endif %}"
+                     style="width: 80%;margin: 10px auto;">
+                    <label class="layui-form-label">{{ foo.label }}</label>
+                    <div class="layui-input-block">
+                        {{ foo }}
+                        <span style="color: red">{{ foo.errors.0 }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" lay-submit lay-filter="add">立即提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重填</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </body>
+{% endblock %}
+{% block footer_js %}
+    <script>
+        var activity_content = CKEDITOR.replace('activity_content', {});
+        layui.use(['form', 'layer'], function () {
+            $ = layui.jquery;
+            var form = layui.form,
+                layer = layui.layer;
+            //监听提交
+            form.on('submit(add)', function (data) {
+                var data_s = $('form').serializeArray();
+                var new_data = {};
+                $.each(data_s, function () {
+                    new_data[this.name] = this.value
+                });
+                new_data['activity_content'] = activity_content.getData();
+                $.ajax({
+                    type: 'POST',
+                    data: new_data,
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.status === 0) {
+                            {% if title=='更新' %}
+                                layer.alert("{{ title }}成功", {icon: 6}, function () {
+                                    var index = parent.layer.getFrameIndex(window.name);
+                                    parent.layer.close(index);
+                                });
+                            {% else %}
+                                layer.msg('{{ title }}成功', {icon: 1, time: 1000});
+                                window.location.reload();
+                            {% endif %}
+                        } else {
+                            layer.msg('{{ title }}失败: ' + data.message, {icon: 2, time: 3000});
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+    </script>
+    <!--获取时间-->
+    <script>
+        $(function (data) {
+            layui.use('laydate', function () {
+                var laydate = layui.laydate;
+                laydate.render({
+                    elem: '#activity_date' //指定元素
+                });
+            })
+        })
+    </script>
+{% endblock %}

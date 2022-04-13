@@ -1,0 +1,57 @@
+{% extends 'base/base.html' %}
+{% block title %}
+    社团会员
+{% endblock %}
+{% block body %}
+    <body>
+    <div class="x-body">
+    <form class="layui-form layui-form-pane" >
+        {% for foo in form %}
+            <div class="layui-form-item">
+                <label class="layui-form-label">{{ foo.label }}</label>
+                <div class="layui-input-block">
+                    {{ foo }}
+                </div>
+            </div>
+        {% endfor %}
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn" lay-submit lay-filter="post">立即提交</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+</div>
+</body>
+{% block footer_js %}
+    <script>
+        layui.use('form', function () {
+            var form = layui.form;
+            //监听提交
+            form.on('submit(post)', function (data) {
+                $.ajax({
+                    data: data.field,
+                    dataType: "json",
+                    type: "POST",
+                    success: function (data) {
+                        if (data.status === 0) {
+                            {% if title=='更新' %}
+                                layer.alert("{{ title }}成功", {icon: 6}, function () {
+                                    var index = parent.layer.getFrameIndex(window.name);
+                                    parent.layer.close(index);
+                                });{% else %}
+                                // 添加
+                                layer.msg('{{ title }}成功', {icon: 1, time: 1000});
+                                window.location.reload();
+                            {% endif %}
+
+                        } else {
+                            layer.msg('操作失败: '+data.message, {icon: 2, time: 3000});
+                        }
+                    }
+                });
+                return false;
+            });
+        });
+    </script>{% endblock %}
