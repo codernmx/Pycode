@@ -9,6 +9,7 @@ mail_pass="nwnerbeymwhjdiaj"   #口令
 sender = 'nmxgzs@foxmail.com'
 receivers = 'nmxgzs@foxmail.com,2953136852@qq.com' # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
 
+
 # 开始请求天气接口
 host = 'https://ali-weather.showapi.com'
 path = '/area-to-weather'
