@@ -4,11 +4,11 @@
 ## 💻Turtle包括：冰墩墩，佩奇，插画，火柴人，兔子（turtle），樱花树，玲娜贝儿，生日蛋糕
 # 🌱求个星星## 求个星星# 求个星星
 
-### 👨‍画图部分直达: https://s.nmxgzs.cn/lvGbW
+### 👨‍画图部分直达: https://short.nmxgzs.cn/lvGbW
 
-### 🏡Turtle画图直达：https://s.nmxgzs.cn/5VjfT
+### 🏡Turtle画图直达：https://short.nmxgzs.cn/5VjfT
 
-### 🌱所有爬虫直达：https://s.nmxgzs.cn/d9Mej
+### 🌱所有爬虫直达：https://short.nmxgzs.cn/d9Mej
 
-### ✨小案例直达：https://s.nmxgzs.cn/QVV67
+### ✨小案例直达：https://short.nmxgzs.cn/QVV67
 👨‍ 🏡 🌱 😺 💬 👬 ✨ 🤔 🐧 💻
