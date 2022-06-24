@@ -8,7 +8,7 @@ def download_img(img_url):
     }
     r = requests.get(img_url, headers=headers, stream=True)
     if r.status_code == 200:
-        img_name = img_url.split('/').pop()[-12:]  # 截取图片文件名
+        img_name = 'img/动漫-'+img_url.split('/').pop()[-12:]  # 截取图片文件名
         print(img_name)
         with open(img_name, 'wb') as f:
             f.write(r.content)
@@ -44,6 +44,6 @@ def getImgUrl(url):
 
 if __name__ == '__main__':
     # 下载要的图片
-    for i in range(30, 100):
-        imgUrl = 'http://www.netbian.com/meinv/index_' + str(i) + '.htm'
+    for i in range(31, 41):
+        imgUrl = 'http://www.netbian.com/dongman/index_' + str(i) + '.htm'
         getImgUrl(imgUrl)
