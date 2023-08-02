@@ -60,7 +60,9 @@ def sendMsg(OPEN_ID, CAR_NUMBER, REASON):
 
 
 if __name__ == '__main__':
-    getTokenUrl = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx6f877428ac5ee3f2&secret=5be7b51e5f4e96b6dcb7b8fcacb79ada'
+    appid = ''
+    secret = ''
+    getTokenUrl = 'https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid={appid}&secret={secret}'
     response = requests.get(getTokenUrl)
     access_token = json.loads(response.text)['access_token']
     print('获取token----------->', access_token)
