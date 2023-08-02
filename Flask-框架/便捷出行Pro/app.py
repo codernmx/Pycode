@@ -10,11 +10,11 @@ from werkzeug.middleware.proxy_fix import ProxyFix  # nginx代理
 app = Flask(__name__)
 app.wsgi_app = ProxyFix(app.wsgi_app)
 config = {
-    "appid": 'wx285a242d191f9226',  # 小程序appid
-    "secret": '9a2df59bab8c6b744cf699749d5d6263',  # 小程序秘钥
-    'appidFanyi': '20210824000926272',  # 百度翻译
-    'appkey': 'PnMbaUZ5Y_yjxpQHMdVH',  # 百度翻译
-    'ak': 'Z2mZbxYsOQllRq7MqFspSrYNqG9uPa20',  # 百度ip的key值
+    "appid": '',  # 小程序appid
+    "secret": '',  # 小程序秘钥
+    'appidFanyi': '',  # 百度翻译
+    'appkey': '',  # 百度翻译
+    'ak': '',  # 百度ip的key值
 
 }
 
