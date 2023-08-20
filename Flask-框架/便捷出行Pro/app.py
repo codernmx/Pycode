@@ -26,7 +26,6 @@ config = {
 # 连接数据库
 def coon():
     db = pymysql.connect(host="localhost", user="root", password="137928", database="BJCX", port=3306)
-    # db = pymysql.connect(host="49.232.153.152", user="BJCX", password="YpM8X7pF4wXCTZ7t", database="BJCX", port=3306)
     cursor = db.cursor(cursor=pymysql.cursors.DictCursor)
     return cursor
 
