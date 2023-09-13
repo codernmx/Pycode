@@ -9,9 +9,8 @@ from error import success, fail
 
 app = Flask(__name__)
 config = {
-    "appid": 'wxd9839f9c40077615',
-    "secret": 'b4309c70ba68d54137bebeb408ccf5de',
-
+    "appid": 'wxd9839f9c40',
+    "secret": 'b4309c70ba68d541',
 }
 
 
