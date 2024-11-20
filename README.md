@@ -1,7 +1,7 @@
 #### 软件开发定制可联系V（注明来意）:
 Maisy_915
 
-<img src="chat.jpg" style="zoom:50%;" />
+<img src="chat.jpg" style="zoom:50%;width:200px" />
 
 ### ✨案例：
 
